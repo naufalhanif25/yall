@@ -11,8 +11,8 @@ private:
     vector<YALLOption> option_list;
 
     void show_help() {
-        cout << string(DESCRIPTION) << " " << yall_rainbow.apply({ "dim" }, "(" + string(VERSION) + ")") << endl << endl;
-        
+        cout << string(DESCRIPTION) << " " << yall_rainbow.apply({ "yellow" }, "(" + string(VERSION) + ")") << endl << endl;
+
         cout << yall_rainbow.apply({ "bold" }, "Usage: " + string(NAME) + string(" ")) << yall_rainbow.apply({ "cyan", "bold" }, "[option...] [argument...]") << endl << endl;
         cout << yall_rainbow.apply({ "bold" }, "Options:") << endl;
 
@@ -33,6 +33,8 @@ private:
             }
             cout << endl;
         }
+        
+        cout << endl << yall_rainbow.apply({ "bold" }, "Learn more about HRON:") << "\t" << yall_rainbow.apply({ "yellow" }, "https://github.com/naufalhanif25/yall.git") << endl;
     }
 
 public:
