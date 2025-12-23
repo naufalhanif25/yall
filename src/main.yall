@@ -1,0 +1,16 @@
+main:
+    std.store(index, 0)
+    std.store(start, time.now())
+    std.goto(loop)
+
+loop:
+    std.store(index, math.add(std.load(index), 1))
+    std.cout(std.load(index))
+    std.goif(math.equ(std.load(index), 1000), exit)
+    std.goto(loop)
+
+exit:
+    std.store(end, time.now())
+    std.store(exec_time, time.mili(time.diff(std.load(start), std.load(end))))
+    std.cout("\nExecuted in", std.load(exec_time), "ms")
+    std.exit(0)
